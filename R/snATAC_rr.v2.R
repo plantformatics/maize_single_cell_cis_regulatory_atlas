@@ -97,9 +97,7 @@ suppressMessages(library(pheatmap))
 suppressMessages(library(ComplexHeatmap))
 suppressMessages(library(circlize))
 suppressMessages(library(reshape2))
-source("/scratch/apm25309/single_cell/ATACseq/v3/step1_clustering/model_based/snATAC_rr.marker_accessibility_Utils.R")
-source("/scratch/apm25309/single_cell/ATACseq/v3/step1_clustering/model_based/snATAC_rr.cluster_Utils.v2.R")
-source("/scratch/apm25309/single_cell/ATACseq/v3/step1_clustering/model_based/snATAC_rr.celltype_call_Utils.R")
+source("snATAC_rr.cluster_Utils.v2.R")
 
 
 ###################################################################################################
@@ -271,80 +269,3 @@ if(reclustType==1 | reclustType==2 | reclustType==3){
     gc()
     subclusters <- b
 }
-
-# ###################################################################################################
-# ## call celltypes ---------------------------------------------------------------------------------
-# ###################################################################################################
-# sparse <- "/scratch/apm25309/single_cell/ATACseq/v3/step3_gene_activity_and_coaccessibility/automated_annotation/custom_annotation/all.sct.exGBcounts.sparse"
-# markers <- "/scratch/apm25309/single_cell/ATACseq/v3/step3_gene_activity_and_coaccessibility/automated_annotation/custom_annotation/marker_list.txt"
-# obj <- loadDataS(sparse, subclusters, markers)
-# a <- obj$a
-# b <- obj$b
-# m <- obj$m
-# gm <- read.table("/scratch/apm25309/single_cell/ATACseq/v3/bedfiles/genes/Zea_mays.AGPv4.36.Allgene.expanded.bed")
-# 
-# # get gene tests
-# all <- runDESeq2(a, b, prefix=prefix, threads=ncpus, reps=5)
-# 
-# # coarse level celltypes
-# celltype.results <- classifyTypes.v1(all, m, b, 
-#                                      num.markers=10, 
-#                                      clustID="top_tissue_cluster", 
-#                                      prefix=prefix, 
-#                                      orderVar="statistic",
-#                                      threshold=5e-2,
-#                                      q.thresh=1,
-#                                      adjustM=T,
-#                                      scaleStat=F)
-# 
-# # fine level celltypes
-# pred.celltypes <- classifyTypes.v2(a, celltype.results$b, m, 
-#                                    celltype.results$topAnn, 
-#                                    all, 
-#                                    gm,
-#                                    threads=ncpus, 
-#                                    balance=F, 
-#                                    marker.qval=1e-2,
-#                                    normalize=T,
-#                                    useweights=T,
-#                                    enrichMethod=4,
-#                                    threshold=log2(5),
-#                                    doHard=T,
-#                                    preCalcEnrich=NULL,
-#                                    prefix=prefix)
-# 
-# # write output
-# write.table(pred.celltypes$meta, file="metadata.step6.txt", quote=F, row.names=T, col.names=T, sep="\t")
-
-
-# ###################################################################################################
-# # check markers -----------------------------------------------------------------------------------
-# ###################################################################################################
-# 
-# # load marker/gene activity
-# datt <- loadMData(subclusters, out.pcs, geneact, mark, clustID="tissue_cluster")
-# b <- datt$b
-# activity <- datt$activity
-# h.pcs <- datt$h.pcs
-# marker.info <- datt$marker.info
-# 
-# # normalize per cell activity by cluster average and size factors
-# results <- normalize.activity(b, activity, output=prefix, logTransform=F, scaleP=F)
-# activity <- results$norm.act
-# row.o <- results$row.o
-# 
-# # impute gene accessibility scores
-# impute.activity <- smooth.data(activity, 
-#                                k=15, step=2, npcs=ncol(out.pcs), df=NULL,
-#                                rds=h.pcs, cleanExp=F, output=prefix)
-# 
-# # collect marker accessibility
-# plot.act.scores(b, acts=activity, 
-#                 info=marker.info, 
-#                 logT=T,
-#                 outname=paste0(prefix,".normalized.known.Markers.pdf"))
-# 
-# plot.act.scores(b, acts=impute.activity, 
-#                 info=marker.info, 
-#                 logT=F,
-#                 outname=paste0(prefix,".impute.known.Markers.pdf"))
