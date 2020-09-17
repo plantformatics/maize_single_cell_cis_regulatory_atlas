@@ -18,8 +18,8 @@ This repository contains scripts used in the analysis of maize scATAC-seq atlas 
 Requests for additional code can be made in the issues tab of this repository. 
 
 ## Genome browser of cell-type resolved ATAC-seq profiles
-Zea mays and Arabidopsis thaliana cell-type profiles can be found under the following URLs:
-[maize](http://epigenome.genetics.uga.edu/PlantEpigenome/?data=zea_mays_v4&cat=Maize%20Epigenome&loc=8%3A171225459..171227370&tracks=genes&highlight=)
-[arabidopsis](http://epigenome.genetics.uga.edu/PlantEpigenome/?data=a_thaliana_tair10&loc=chr5%3A19883361..19903660&tracks=genes&highlight=)
+In addition to raw and processed data available from NCBI GEO, we also provide coverage tracks of *Zea mays* and *Arabidopsis thaliana* cell-types on our Jbrowse genome browser. Cell-type aggregate chromatin accessibility profiles can be found under the following URLs:
+* [maize](http://epigenome.genetics.uga.edu/PlantEpigenome/?data=zea_mays_v4&cat=Maize%20Epigenome&loc=8%3A171225459..171227370&tracks=genes&highlight=)
+* [arabidopsis](http://epigenome.genetics.uga.edu/PlantEpigenome/?data=a_thaliana_tair10&loc=chr5%3A19883361..19903660&tracks=genes&highlight=)
 
-Simply load the relevant tracks under tab labeled **scATAC_celltypes**
+Simply load the relevant tracks under the tab labeled **scATAC_celltypes**
