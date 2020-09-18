@@ -16,7 +16,7 @@ Inputs for sparse, gene, and TFgene are triplet format sparse matrices saved as 
 	* snATAC_rr.R
 	* snATAC_rr.cluster_Utils.R
 
-* Identification of co-accessible ACRs
+* Identification of co-accessible ACRs and estimates of gene accessibility scores
 	* call_coaccessible.R
 	* call_coaccessible_UTILs.R
 
@@ -28,7 +28,7 @@ Inputs for sparse, gene, and TFgene are triplet format sparse matrices saved as 
 
 
 ## Additional scripts
-Requests for additional code can be made in the issues tab of this repository. 
+This repository contains the major scripts used in the analysis. Requests for additional code can be made in the issues tab of this repository, or by contact me my email (marand@uga.edu). 
 
 ## Genome browser of cell-type resolved ATAC-seq profiles
 In addition to raw and processed data available from NCBI GEO, we also provide coverage tracks of *Zea mays* and *Arabidopsis thaliana* cell-types on our Jbrowse genome browser. Cell-type aggregate chromatin accessibility profiles can be found under the following URLs:
