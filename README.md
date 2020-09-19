@@ -18,12 +18,12 @@ These scripts contain the main functions for clustering barcode x feature (windo
 	* snATAC_rr.cluster_Utils.R
 
 * **Identification of co-accessible ACRs and estimates of gene accessibility scores**  
-These scripts identify co-accessible ACRs using empirical FDR thresholds. Co-accessible ACRs are used tie distal ACRs to genes, which along with TSS localized ACRs, are used to estimate gene accessible scores predictive of gene expression via a graphical LASSO model implemented by [cicero](https://cole-trapnell-lab.github.io/cicero-release/docs_m3/).
+These scripts identify co-accessible ACRs using empirical FDR thresholds. Co-accessible ACRs are used tie distal ACRs to genes, which along with TSS localized ACRs, are used to estimate gene accessible scores predictive of gene expression via a graphical LASSO model. Initial identification of co-accessible ACRs and gene accessibility scores leverage the [cicero](https://cole-trapnell-lab.github.io/cicero-release/docs_m3/) scATAC-seq framework.
 	* call_coaccessible.R
 	* call_coaccessible_UTILs.R
 
 * **Pseudotime analysis**  
-Scripts used to order and estimate pseudotime for each cell. Differential accessibility of ACRs, genes, and motifs are determined via F-statistic based hypothesis testing with natural splines linear regression.
+Scripts used to order and estimate pseudotime for each cell. Differential accessibility of ACRs, genes, and motifs are determined via F-statistic based hypothesis testing with natural splines linear regression. Pseudotime estimates are derived from the SVD space and rely heavily on code developed by Ryan Corces and Jeffrey Granja from the Greenleaf lab [archR](https://www.archrproject.com).  
 	* pseudotime_analysis.R
 
 * **Pseudotime alignment**  
