@@ -12,21 +12,21 @@ Rscript pseudotime.R <sparse> <motif.deviations> <gene> <TFgene> <meta> <svd> <p
 Inputs for sparse, gene, and TFgene are triplet format sparse matrices saved as text files. Examples of input files are provided in the **example_files** directory.
 
 ## Provided scripts
-* Quasibinomial logistic regression
+* Quasibinomial logistic regression  
 These scripts contain the main functions for clustering barcode x feature (windows/ACRs/peaks) sparse matrices, producing UMAP embeddings and Louvain neighborhood groupings.
 	* snATAC_rr.R
 	* snATAC_rr.cluster_Utils.R
 
-* Identification of co-accessible ACRs and estimates of gene accessibility scores
+* Identification of co-accessible ACRs and estimates of gene accessibility scores  
 These scripts identify co-accessible ACRs using empirical FDR thresholds. Co-accessible ACRs are used tie distal ACRs to genes, which along with TSS localized ACRs, are used to estimate gene accessible scores predictive of gene expression via a graphical LASSO model implemented by [cicero](https://cole-trapnell-lab.github.io/cicero-release/docs_m3/).
 	* call_coaccessible.R
 	* call_coaccessible_UTILs.R
 
-* Pseudotime analysis
+* Pseudotime analysis  
 Scripts used to order and estimate pseudotime for each cell. Differential accessibility of ACRs, genes, and motifs are determined via F-statistic based hypothesis testing with natural splines linear regression.
 	* pseudotime_analysis.R
 
-* Pseudotime alignment
+* Pseudotime alignment  
 R scripts that align homologous (putative 1-1 orthologs) genes between *Zea mays* and *Arabidopsis thaliana* along a pseudotime trajectory via dynamic time warping. 
 	* alignTrajectories.R
 
