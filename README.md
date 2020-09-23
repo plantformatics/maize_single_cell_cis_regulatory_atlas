@@ -12,7 +12,7 @@ Rscript pseudotime.R <sparse> <motif.deviations> <gene> <TFgene> <meta> <svd> <p
 Inputs for sparse, gene, and TFgene are triplet format sparse matrices saved as text files. Examples of input files are provided in the **example_files** directory.
 
 ## Provided scripts
-* **Quasibinomial logistic regression**  
+* **Regularized quasibinomial logistic regression, UMAP, and Louvain clustering**  
 These scripts contain the main functions for clustering barcode x feature (windows/ACRs/peaks) sparse matrices, producing UMAP embeddings and Louvain neighborhood groupings.
 	* snATAC_rr.R
 	* snATAC_rr.cluster_Utils.R
