@@ -18,12 +18,12 @@ These scripts contain the main functions for clustering barcode x feature (windo
 	* snATAC_rr.cluster_Utils.R
 
 * **Identification of co-accessible ACRs and estimates of gene accessibility scores**  
-These scripts identify co-accessible ACRs using empirical FDR thresholds. Co-accessible ACRs are used tie distal ACRs to genes, which along with TSS localized ACRs, are used to estimate gene accessible scores predictive of gene expression via a graphical LASSO model. Initial identification of co-accessible ACRs and gene accessibility scores leverage the [cicero](https://cole-trapnell-lab.github.io/cicero-release/docs_m3/) scATAC-seq framework.
+These scripts identify co-accessible ACRs using empirical FDR thresholds. Co-accessible ACRs are used tie distal ACRs to genes, which along with TSS localized ACRs, are used to estimate gene accessible scores predictive of gene expression via a graphical LASSO model. Initial identification of co-accessible ACRs and gene accessibility scores leverage the [cicero](https://cole-trapnell-lab.github.io/cicero-release/docs_m3/) scATAC-seq framework. [1]
 	* call_coaccessible.R
 	* call_coaccessible_UTILs.R
 
 * **Pseudotime analysis**  
-Scripts used to order and estimate pseudotime for each cell. Differential accessibility of ACRs, genes, and motifs are determined via F-statistic based hypothesis testing with natural splines linear regression. Pseudotime estimates are derived from the SVD space and rely heavily on code developed by Ryan Corces and Jeffrey Granja from the Greenleaf lab [archR](https://www.archrproject.com).  
+Scripts used to order and estimate pseudotime for each cell. Differential accessibility of ACRs, genes, and motifs are determined via F-statistic based hypothesis testing with natural splines linear regression. Pseudotime estimates are derived from the SVD space and rely heavily on code developed by Ryan Corces and Jeffrey Granja from the Greenleaf lab [archR](https://www.archrproject.com). [2]
 	* pseudotime_analysis.R
 
 * **Pseudotime alignment**  
@@ -40,3 +40,7 @@ In addition to raw and processed data available from NCBI GEO, we also provide c
 * [*Arabidopsis thaliana*](http://epigenome.genetics.uga.edu/PlantEpigenome/?data=a_thaliana_tair10&loc=chr5%3A19883361..19903660&tracks=genes&highlight=)
 
 Simply load the relevant tracks under the tab labeled **scATAC_celltypes**
+
+## References
+1. Pliner et al. (2018). [Cicero Predicts cis-Regulatory DNA interactions from Single-Cell Chromatin Accessibility Data](https://doi.org/10.1016/j.molcel.2018.06.044). *Molecular Cell*
+2. Granja, Corces, et al. (2020). [ArchR: An integrative and scalable software package for single-cell chromatin accessibility analysis](https://www.biorxiv.org/content/10.1101/2020.04.28.066498v1). *bioRxiv*
